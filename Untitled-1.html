@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fusername"].value;
+            alert("Name must be filled out");
+            if (x == "") {
+
+                return false;
+            }
+        }
+        let x = document.forms["myForm"]["femail"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        let x = document.forms["myForm"]["fcontant"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+        let x = document.forms["myForm"]["fpsw"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        let x = document.forms["myForm"]["fpsw-repeat"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+    </script>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: whitesmoke;
+
+
+
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
+
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+
+    a {
+        color: dodgerblue;
+    }
+
+
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+
+    .button {
+        border-radius: 4px;
+        background-color: whitesmoke;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .button {
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border: 2px solid #000000;
+
+
+    }
+
+    .button:hover {
+        box-shadow: 0 16px 20px 0 rgba(135, 220, 253, 0.76), 0 17px 50px 0 rgba(6, 170, 247, 0.664);
+    }
+
+    h1 {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        font-variant: small-caps;
+        font-style: italic;
+    }
+
+    h2 {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgba(125, 219, 243, 0.87), 0 0 5px rgba(118, 51, 163, 0.904);
+            font-style: oblique;
+            font-family:  "serif", "sans-serif", "cursive", "fantasy", "monospace";
+         
+            
+    }
+</style>
+
+<body>
+
+    <center>
+        <h1>Form
+    </center>
+    </h1>
+
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        <h2><b> Username</h2></b> <input type="text" name="fusername" onclick="alert('enter name');" required><br>
+        <h2><b>Email </h2></b> <input type="text" name="femail" id="EMAIL" onclick="alert('enter your email');"
+            required>
+        <small id="EMAIL" class="form-text text-muted invaild-feedback"></small>
+        <br>
+        <h2><b>Contact Number </h2></b> <input type="text" name="fcontact" id="contact"
+            onclick="alert('enter your phone number');" required>
+        <small id="contact" class="form-text text-muted invaild-feedback"></small>
+
+
+        <label for="psw">
+            <h2><b>Password </h2></b>
+        </label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern=".{2}"
+            onclick="alert('enter your password');" required>
+
+        <br>
+        <label for="psw-repeat">
+            <h2><b>Repeat Password</h2></b>
+        </label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required
+            onclick="alert('enter your conform password'); "><br>
+        <button class="button" onclick="alert('are you sure');"><span>submit</span></button>
+    </form>
+
+</body>
+
+</html>
